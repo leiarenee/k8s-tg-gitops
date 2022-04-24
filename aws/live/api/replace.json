@@ -1,0 +1,13 @@
+{
+  "REPO":"https://github.com/leiarenee/smpl-api.git",
+  "REPO_SSH":"git@github.com:leiarenee/smpl-api.git",
+  "BRANCH":"main",
+  "APP_NAME":"flask-api",
+  "USE_REMOTE_CACHE":"true",
+  "INVALIDATE_REMOTE_CACHE":"false",
+  "CONTAINER_PORT":8000,
+  "EXTERNAL_PORT":80,
+  "HEALTH_CHECK_TIMEOUT":60,
+  "RUN_AUTO_BUILD":true,
+  "SLOT":0
+}

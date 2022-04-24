@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-api-internal
+  labels:
+    service: flask-api
+spec:
+  ports:
+  - protocol: TCP
+    port: 8181
+    targetPort: 8181
+  selector:
+    app: flask-api
+  type: ClusterIP
+
+

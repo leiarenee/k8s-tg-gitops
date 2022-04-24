@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${APP_NAME}
+  labels:
+    app: ${APP_NAME}
+spec:
+  selector:
+    matchLabels:
+      app: ${APP_NAME}
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: ${APP_NAME}
+        group: carte
+    spec:
+      containers:
+      - name: ${APP_NAME}
+        image: ${IMAGE_URL}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: ${CONTAINER_PORT}
+        resources:
+            requests:
+              cpu: 500m
+              memory: 1000M
+            limits:
+              cpu: 500m
+              memory: 1000M
+        env:
+        - name: PYTHONPATH
+          value: "src"
+
+
+
+
+

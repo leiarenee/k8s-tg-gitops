@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  generateName: terraform-
+  labels:
+    test: MyExampleApp
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      test: MyExampleApp
+  
+  template:
+    metadata:
+      labels:
+        test: MyExampleApp
+    
+    spec:
+      containers:
+      - name: example
+        image: nginxdemos/hello
+        ports:
+        - containerPort: 80
+        

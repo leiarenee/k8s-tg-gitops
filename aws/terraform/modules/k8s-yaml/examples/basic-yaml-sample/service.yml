@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  generateName: terraform-
+
+spec:
+  selector:
+    test: MyExampleApp
+
+  ports :
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
+  type: LoadBalancer

@@ -1,0 +1,32 @@
+version: 0.2
+
+env:
+  git-credential-helper: yes
+
+phases:
+  install:
+    commands:
+      - if [ $CODEBUILD_BUILD_SUCCEEDING -eq 0 ];then exit 1;fi
+      #- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
+      # - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
+  pre_build:
+    commands:
+
+  build:
+    commands:
+      - if [ $CODEBUILD_BUILD_SUCCEEDING -eq 0 ];then exit 1;fi
+      - echo Building the Docker image...
+      - cd $BUILD_CONTEXT
+      - $BUILD_FILE
+
+  post_build:
+    commands:
+      - if [ $CODEBUILD_BUILD_SUCCEEDING -eq 0 ];then exit 1;fi
+      - echo Build completed on `date`
+      - printf '[{"name":"%s","imageUri":"%s"}]' $APP_NAME $REPOSITORY_URL:$latest > imagedefinitions.json
+
+artifacts:
+  files: imagedefinitions.json
+
+cache:
+  paths:
