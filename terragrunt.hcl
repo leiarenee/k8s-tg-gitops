@@ -45,7 +45,7 @@ locals {
   assume_profile = lookup(local.account, "parent_profile", local.aws_profile)
 
   common_inputs = {
-    aws_batch_id = get_env("AWS_BATCH_ID")
+    # aws_batch_id = get_env("AWS_BATCH_ID")
   }
 
 }

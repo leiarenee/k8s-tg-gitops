@@ -6,7 +6,7 @@ locals {
 }
 
 terraform {
-  source = "${get_parent_terragrunt_dir()}//modules/deploy-application"
+  source = "${get_parent_terragrunt_dir()}//aws/terraform/modules/deploy-application"
 }
 
 # Include all settings from the root terragrunt.hcl file

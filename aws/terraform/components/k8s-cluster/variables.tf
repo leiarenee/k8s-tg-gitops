@@ -3,3 +3,8 @@ variable "cluster_name" {
   default = "my-k8s"
   type = string
 }
+
+variable "vpc" {
+  description = "Vpc parameters"
+  type = any
+}

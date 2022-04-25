@@ -24,7 +24,7 @@ output "expose_external" {
 
 output "loadBalancerIngress" {
   #value = var.module_enabled ? ( var.expose_external ? join(",", local.service_output.loadBalancerIngress[*].hostname) : null) : null
-  value = local.service_output.status.0.load_balancer.0.ingress.0.hostname
+  value = var.module_enabled ? ( var.expose_external ? local.service_output.status.0.load_balancer.0.ingress.0.hostname : null) : null
 }
 
 output "cname" {
