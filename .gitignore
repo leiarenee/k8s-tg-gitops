@@ -26,4 +26,4 @@ sshkey
 #other
 *.override.hcl
 *.tgpid
-override.env
+.override.env
