@@ -13,6 +13,13 @@ Sample Repository for Creating a Kubernetes Cluster over a private VPC and repli
 * Terragrunt > v31.0
 * AWS Client > v2.0
 * Jq
+* timeout
+
+## Install ##
+
+```sh
+brew install terraform terragrunt awscli jq coreutils
+```
 
 ## Running ##
 

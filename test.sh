@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-HOST="flask-api.leia.dev.leiarenee.io"
+HOST="flask-api.testing.leiarenee.io"
 PORT=80
 URL="http://$HOST:$PORT/api/replace"
 DATA="The analysts of ABN did a great job!"

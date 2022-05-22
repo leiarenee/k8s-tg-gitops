@@ -125,6 +125,11 @@ module "eks" {
       username = "OrganizationAccountAccessRole"
       groups   = ["system:masters"]
     },
+    {
+      rolearn  = "arn:aws:iam::518854297938:role/OrganizationAccountAccessRole"
+      username = "OrganizationAccountAccessRole"
+      groups   = ["system:masters"]
+    },
   ]
 
   aws_auth_users = [
@@ -132,11 +137,22 @@ module "eks" {
       userarn  = "arn:aws:iam::553688522943:user/cicd"
       username = "cicd"
       groups   = ["system:masters"]
+    },
+    {
+      userarn  = "arn:aws:iam::518854297938:user/cicd"
+      username = "cicd"
+      groups   = ["system:masters"]
+    },
+    {
+      userarn  = "arn:aws:iam::553688522943:user/attraqt"
+      username = "attraqt"
+      groups   = ["system:masters"]
     }
   ]
 
   aws_auth_accounts = [
-    "553688522943"
+    "553688522943",
+    "518854297938"
   ]
 
   tags = local.tags

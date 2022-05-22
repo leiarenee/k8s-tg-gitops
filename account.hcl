@@ -11,9 +11,9 @@ locals {
       aws_profile    = "testing"
       bucket_suffix  = ""
       parameters = {
-        DOMAIN         = "staging.dev"
-        DNS_ZONE_ID    = "Z00140663TMWUSEB0C8DN"
-        CLUSTER        = "testing-cluster"
+        DOMAIN         = "testing.aws.leiarenee.io"
+        DNS_ZONE_ID    = "Z0161485393JSLHK8QSEQ"
+        CLUSTER        = "my-testing-k8s"
       }
     }
 
@@ -21,12 +21,12 @@ locals {
     staging = {
       account_name   = "staging"
       aws_account_id = "518854297938"
-      aws_profile    = "staging"
+      aws_profile    = "leia-staging"
       bucket_suffix  = ""
       parameters = {
-        DOMAIN         = "staging.dev"
+        DOMAIN         = "staging.aws.leiarenee.io"
         DNS_ZONE_ID    = "Z00140663TMWUSEB0C8DN"
-        CLUSTER        = "staging-cluster"
+        CLUSTER        = "my-staging-k8s"
       }
     }
 
@@ -37,9 +37,9 @@ locals {
       aws_profile    = "prod1"
       bucket_suffix  = ""
       parameters = {
-        DOMAIN         = "prod1.dev"
+        DOMAIN         = "production1.aws.leiarenee.io"
         DNS_ZONE_ID    = "Z00140663TMWUSEB0C8DN"
-        CLUSTER        = "production1-cluster"
+        CLUSTER        = "my-production1-k8s"
       }
     }
       
@@ -50,11 +50,23 @@ locals {
       aws_profile    = "prod2"
       bucket_suffix  = ""
       parameters = {
-        DOMAIN         = "prod2.dev"
+        DOMAIN         = "production2.aws.leiarenee.io"
         DNS_ZONE_ID    = "Z00140663TMWUSEB0C8DN"
-        CLUSTER        = "production2-cluster"
+        CLUSTER        = "my-production2-k8s"
       }
     }
+
+    # Static
+    static = {
+      account_name   = "static"
+      aws_account_id = "377449198785"
+      aws_profile    = "static"
+      bucket_suffix  = ""
+      parameters = {
+
+      }
+    }
+
   }
 }
 
